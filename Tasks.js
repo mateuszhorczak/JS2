@@ -171,6 +171,14 @@ function  task5() {
         return Math.floor(Math.random() * 99);
     }
 
+    function calculatePrice() {
+        var totalPrice = 0;
+        productList.forEach((element) => {
+            totalPrice += element.price * element.count
+        });
+        return totalPrice;
+    }
+
     let priceList = [
         new Product('ziemniaki'),
         new Product('chleb'),
@@ -197,8 +205,8 @@ function  task5() {
         element.count = getRandomCount();
     });
 
+    console.log('Laczna cena: ' + calculatePrice().toFixed(2));
     return productList;
-
 }
 
 
